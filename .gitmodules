@@ -1,0 +1,3 @@
+[submodule "PhotoBrowser"]
+	path = PhotoBrowser
+	url = https://github.com/JiongXing/PhotoBrowser/

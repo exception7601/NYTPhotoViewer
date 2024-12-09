@@ -1,3 +1,6 @@
 [submodule "PhotoBrowser"]
 	path = PhotoBrowser
 	url = https://github.com/JiongXing/PhotoBrowser/
+[submodule "NYTPhotoViewer"]
+	path = NYTPhotoViewer
+	url = https://github.com/nytimes/NYTPhotoViewer/

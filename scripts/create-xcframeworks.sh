@@ -1,9 +1,11 @@
 ROOT=".build/xcframeworks"
-FRAMEWORK_PATH="Products/Library/Frameworks/PhotoBrowser.framework"
+FRAMEWORK_PATH="Products/Library/Frameworks/NYTPhotoViewer.framework"
 PLATAFORMS=("iOS" "iOS Simulator")
-NAME=photobrowser.xcframework.zip
-VERSION=3.1.5
+NAME=NYTPhotoViewer.xcframework.zip
+VERSION=5.0.8
 REPO=exception7601/PhotoBrowser
+ARCHIVE_NAME=nytphotoviewer
+FRAMEWORK_NAME=NYTPhotoViewer
 ORIGIN=$(pwd)
 set -e  # Saia no primeiro erro
 
@@ -12,25 +14,25 @@ rm -rf $ROOT
 for PLATAFORM in "${PLATAFORMS[@]}"
 do
 xcodebuild archive \
-    -project PhotoBrowser.xcodeproj \
-    -scheme PhotoBrowser \
+    -project "$FRAMEWORK_NAME.xcodeproj" \
+    -scheme "$FRAMEWORK_NAME" \
     -destination "generic/platform=$PLATAFORM"\
-    -archivePath "$ROOT/photobrowser-$PLATAFORM.xcarchive" \
+    -archivePath "$ROOT/$ARCHIVE_NAME-$PLATAFORM.xcarchive" \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
     DEBUG_INFORMATION_FORMAT=DWARF
 done
 
 xcodebuild -create-xcframework \
-  -framework "$ROOT/photobrowser-iOS.xcarchive/$FRAMEWORK_PATH" \
-  -framework "$ROOT/photobrowser-iOS Simulator.xcarchive/$FRAMEWORK_PATH" \
-   -output "$ROOT/PhotoBrowser.xcframework"
+  -framework "$ROOT/$ARCHIVE_NAME-iOS.xcarchive/$FRAMEWORK_PATH" \
+  -framework "$ROOT/$ARCHIVE_NAME-iOS Simulator.xcarchive/$FRAMEWORK_PATH" \
+   -output "$ROOT/$FRAMEWORK_NAME.xcframework"
 
 # Entre no diretório temporariamente
 cd "$ROOT"
 
 # # Crie o arquivo zip
-zip -rX "$NAME" PhotoBrowser.xcframework/
+zip -rX "$NAME" "$FRAMEWORK_NAME.xcframework/"
 mv "$NAME" "$ORIGIN"
 cd "$ORIGIN"
 
@@ -58,7 +60,7 @@ SPM binaryTarget
 
 \`\`\`
 .binaryTarget(
-  name: "PhotoBrowser",
+  name: "NYTPhotoViewer",
   url: "${URL}.zip",
   checksum: "${SUM}"
 )

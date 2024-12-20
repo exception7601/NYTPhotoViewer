@@ -1,3 +1,4 @@
 [submodule "NYTPhotoViewer"]
 	path = NYTPhotoViewer
 	url = https://github.com/nytimes/NYTPhotoViewer/
+	branch = develop

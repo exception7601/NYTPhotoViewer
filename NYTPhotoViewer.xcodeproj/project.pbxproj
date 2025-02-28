@@ -19,7 +19,7 @@
 		3C5E590280A1DE912C6005EE /* NYTPhotoViewerDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = 15EC52A2D00732BC26F9F241 /* NYTPhotoViewerDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F433BCF9F3A0D8569875B96 /* NYTPhotoViewer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45FAD586783A77C20A3C7FB /* NYTPhotoViewer.framework */; };
 		4BC9F455F2917AB361FF14E8 /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F985ACD5D6C40F6C5F7BC03 /* NYTPhotoDismissalInteractionController.m */; };
-		50093931D8C44DE780161902 /* NYTPhotoViewerCore.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA26544E8F34D9050AEB435 /* NYTPhotoViewerCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		50093931D8C44DE780161902 /* NYTPhotoViewerCore.h in Headers */ = {isa = PBXBuildFile; fileRef = CEA26544E8F34D9050AEB435 /* NYTPhotoViewerCore.h */; };
 		50E48BBF5E4BBE10A3F76E32 /* NYTPhotoViewerSinglePhotoDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B85A09F01C0BEF48103514B7 /* NYTPhotoViewerSinglePhotoDataSourceTests.m */; };
 		52B65607F345336ABDE166A3 /* NYTPhotoDismissalInteractionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 54D2EEB080DFF0D17985F972 /* NYTPhotoDismissalInteractionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		539A5565858907D121F5782A /* PhotoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCC97F19AEE715668977423 /* PhotoItem.swift */; };
@@ -37,7 +37,6 @@
 		8AD667382F42472AC2136FBE /* NYTPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B2D0ED665912DBB996902A2 /* NYTPhotosViewController.m */; };
 		8D30DE16E240195C45310624 /* NYTPhotoViewerArrayDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC0DBA4970FF46F90B9C4FD /* NYTPhotoViewerArrayDataSource.m */; };
 		9797FBB1341836188F785850 /* NYTPhotoViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 29811F022638650C03B7511F /* NYTPhotoViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		99D2E4CA55A649C63C5134DC /* NYTPhotoViewer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F45FAD586783A77C20A3C7FB /* NYTPhotoViewer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9C4BB1F6A687CA2BBBC27B3C /* NYTPhotoTransitionAnimatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8C5925DB92DCD77F8CEAC3 /* NYTPhotoTransitionAnimatorTests.m */; };
 		9FC1C7D4CB02DF04358C2B6F /* NYTPhotoTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606CE815E974C2CBE4252D35 /* NYTPhotoTransitionController.m */; };
 		A6859D37340A976247093A33 /* NYTPhotoTransitionController.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6B6E6A1AFF1965F7C80770 /* NYTPhotoTransitionController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -45,7 +44,7 @@
 		B31ABFA4C536A8C527E5C083 /* NYTPhotoViewerArrayDataSourceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 231AEBA05D03F44A3F0E8BC7 /* NYTPhotoViewerArrayDataSourceTests.m */; };
 		B3C177D6A4F2ABD96B3F3D4A /* NSBundle+NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = A49BDB5F897E7F4059C9F32A /* NSBundle+NYTPhotoViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B5F648C72CAA49227D91010D /* NYTPhotoViewerSinglePhotoDataSource.h in Headers */ = {isa = PBXBuildFile; fileRef = D8E39F3EF7A6D542072ABC06 /* NYTPhotoViewerSinglePhotoDataSource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0F8CA15BC715AC269E9687B /* NYTInterstitialViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F0CBF797F448E731EF1BA6C5 /* NYTInterstitialViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C0F8CA15BC715AC269E9687B /* NYTInterstitialViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = F0CBF797F448E731EF1BA6C5 /* NYTInterstitialViewController.h */; };
 		C7410D0972E6FF7B4FAB7F02 /* NYTPhotoViewerContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = 699155427DE2C7D2FB93C462 /* NYTPhotoViewerContainer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CEC009A2806EC622F1239EDA /* NYTPhotosViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F6D8FDB13CAD290979223D8 /* NYTPhotosViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D4C2D69F6E5E32709A2D31EF /* NYTPhotoViewer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5EAF4807A2BE398BADBBCEB3 /* NYTPhotoViewer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,17 +79,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9797FBB1341836188F785850 /* NYTPhotoViewer.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2B3E74078EDFE920EA4CFFF1 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				99D2E4CA55A649C63C5134DC /* NYTPhotoViewer.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,7 +137,7 @@
 		DDC0DBA4970FF46F90B9C4FD /* NYTPhotoViewerArrayDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewerArrayDataSource.m; sourceTree = "<group>"; };
 		DDFE3DC2147A9D23FCFA3D1F /* NYTPhotosOverlayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosOverlayView.m; sourceTree = "<group>"; };
 		F0CBF797F448E731EF1BA6C5 /* NYTInterstitialViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTInterstitialViewController.h; sourceTree = "<group>"; };
-		F45FAD586783A77C20A3C7FB /* NYTPhotoViewer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NYTPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F45FAD586783A77C20A3C7FB /* NYTPhotoViewer.framework */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.framework; path = NYTPhotoViewer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F92A0DCF09016C26BAC8AB2C /* NYTPhotoViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewControllerTests.m; sourceTree = "<group>"; };
 		FADDAEC7B68CA5532041EEDB /* NYTPhotoCaptionViewLayoutWidthHinting.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NYTPhotoCaptionViewLayoutWidthHinting.h; sourceTree = "<group>"; };
 		FDCC97F19AEE715668977423 /* PhotoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoItem.swift; sourceTree = "<group>"; };
@@ -368,7 +356,6 @@
 			buildPhases = (
 				F23F613C5977168224A6FB69 /* Sources */,
 				AB76EFD5BAAD6420FB0B99A2 /* Frameworks */,
-				2B3E74078EDFE920EA4CFFF1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,7 +382,7 @@
 			name = NYTPhotoViewer;
 			productName = NYTPhotoViewer;
 			productReference = F45FAD586783A77C20A3C7FB /* NYTPhotoViewer.framework */;
-			productType = "com.apple.product-type.framework";
+			productType = "com.apple.product-type.framework.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -531,10 +518,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.ucb.anderson.Host;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -594,7 +586,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -611,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				INFOPLIST_FILE = NYTPhotoViewer/UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -619,8 +611,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.ucb.anderson.NYTPhotoViewerTests;
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				TARGETED_DEVICE_FAMILY = "1,6,7";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -628,6 +623,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -642,7 +638,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.ucb.anderson.NYTPhotoViewer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -655,6 +651,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				INFOPLIST_FILE = NYTPhotoViewer/UnitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -663,8 +660,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.ucb.anderson.NYTPhotoViewerTests;
 				SDKROOT = iphoneos;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
-				TARGETED_DEVICE_FAMILY = "1,6,7";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -672,6 +672,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -686,7 +687,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = io.ucb.anderson.NYTPhotoViewer;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -709,10 +710,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = io.ucb.anderson.Host;
 				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -766,7 +772,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

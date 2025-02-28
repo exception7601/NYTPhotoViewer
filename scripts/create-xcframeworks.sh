@@ -1,12 +1,15 @@
 ROOT=".build/xcframeworks"
 FRAMEWORK_PATH="Products/Library/Frameworks/NYTPhotoViewer.framework"
 PLATAFORMS=("iOS" "iOS Simulator")
-NAME=NYTPhotoViewer.xcframework.zip
+BUILD_COMMIT=$(git log --oneline --abbrev=16 --pretty=format:"%h" -1)
+NAME=NYTPhotoViewer.${BUILD_COMMIT}.zip
 VERSION=5.0.8
 REPO=exception7601/PhotoBrowser
 ARCHIVE_NAME=nytphotoviewer
 FRAMEWORK_NAME=NYTPhotoViewer
 ORIGIN=$(pwd)
+JSON_FILE="Carthage/PhotoBrowserBinary.json"
+
 set -e  # Saia no primeiro erro
 
 rm -rf $ROOT
@@ -42,26 +45,40 @@ BUILD=$(date +%s)
 NEW_VERSION=${VERSION}.${BUILD}
 echo $NEW_VERSION > version
 
-git add version
+DOWNLOAD_URL="https://github.com/${REPO}/releases/download/${NEW_VERSION}/${NAME}"
+
+if [ ! -f $JSON_FILE ]; then
+  echo "{}" > $JSON_FILE
+fi
+
+# Make Carthage
+JSON_CARTHAGE="$(jq --arg version "${VERSION}" --arg url "${DOWNLOAD_URL}" '. + { ($version): $url }' $JSON_FILE)" 
+echo $JSON_CARTHAGE > $JSON_FILE
+
+git add version $JSON_FILE
 git commit -m "new Version ${NEW_VERSION}"
 git tag -s -a ${NEW_VERSION} -m "v${NEW_VERSION}"
 # git checkout -b release-v${VERSION}
 git push origin HEAD --tags
 gh release create ${NEW_VERSION} ${NAME} --notes "checksum \`${SUM}\`"
 
-URL=$(gh release view ${NEW_VERSION} \
-  --repo exception7601/PhotoBrowser \
-  --json assets \
-  -q '.assets[0].apiUrl'
-)
-
 NOTES=$(cat <<END
+Carthage
+\`\`\`
+binary "https://raw.githubusercontent.com/${REPO}/main/${JSON_FILE}"
+\`\`\`
+
+Install
+\`\`\`
+carthage bootstrap --use-xcframeworks
+\`\`\`
+
 SPM binaryTarget
 
 \`\`\`
 .binaryTarget(
   name: "NYTPhotoViewer",
-  url: "${URL}.zip",
+  url: "${DOWNLOAD_URL}",
   checksum: "${SUM}"
 )
 \`\`\`

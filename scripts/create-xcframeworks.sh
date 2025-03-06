@@ -4,7 +4,7 @@ PLATAFORMS=("iOS" "iOS Simulator")
 BUILD_COMMIT=$(git log --oneline --abbrev=16 --pretty=format:"%h" -1)
 NAME=NYTPhotoViewer.${BUILD_COMMIT}.zip
 VERSION=5.0.8
-REPO=exception7601/PhotoBrowser
+REPO=exception7601/NYTPhotoViewer
 ARCHIVE_NAME=nytphotoviewer
 FRAMEWORK_NAME=NYTPhotoViewer
 ORIGIN=$(pwd)

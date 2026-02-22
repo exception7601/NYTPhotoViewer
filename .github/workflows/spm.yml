@@ -31,6 +31,8 @@ jobs:
         with:
           xcode-version: latest-stable
       - name: Make update script executable and run
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           ./scripts/update-submodule.sh
           ./scripts/create-xcframeworks.sh

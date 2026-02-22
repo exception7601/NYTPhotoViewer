@@ -1,0 +1,36 @@
+name: Update SPM
+
+on:
+  # schedule:
+  #   - cron: "0 0 * * *" 
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: macos-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global commit.gpgsign false
+          git config --global tag.gpgsign false
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Set Xcode version to latest
+        uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: latest-stable
+      - name: Make update script executable and run
+        run: |
+          ./scripts/update-submodule.sh
+          ./scripts/create-xcframeworks.sh

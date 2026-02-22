@@ -41,6 +41,10 @@ echo "$NEW_VERSION" >version
 
 DOWNLOAD_URL="https://github.com/${REPO}/releases/download/${NEW_VERSION}/${NAME}"
 
+if ! git diff --quiet NYTPhotoViewer; then
+  git add NYTPhotoViewer
+fi
+  
 git add version
 git commit -m "new Version ${NEW_VERSION}"
 git tag -a "${NEW_VERSION}" -m "v${NEW_VERSION}"

@@ -1,7 +1,7 @@
 #!/bin/sh
 set -e
 
-set -- "iOS" "iOS Simulator"
+set -- "iOS" "iOS Simulator" "macOS,variant=Mac Catalyst"
 ROOT=".build/xcframeworks"
 FRAMEWORK_PATH="Products/Library/Frameworks/NYTPhotoViewer.framework"
 BUILD_COMMIT=$(git log --oneline --abbrev=16 --pretty=format:"%h" -1)
@@ -11,22 +11,28 @@ REPO=exception7601/NYTPhotoViewer
 ARCHIVE_NAME=nytphotoviewer
 FRAMEWORK_NAME=NYTPhotoViewer
 ORIGIN=$(pwd)
-rm -rf $ROOT
+
+rm -rf "$ROOT"
 
 for PLATFORM in "$@"; do
+  ARCHIVE_PLATFORM="$PLATFORM"
+
   xcodebuild archive \
     -project "$FRAMEWORK_NAME.xcodeproj" \
     -scheme "$FRAMEWORK_NAME" \
     -destination "generic/platform=$PLATFORM" \
-    -archivePath "$ROOT/$ARCHIVE_NAME-$PLATFORM.xcarchive" \
+    -archivePath "$ROOT/$ARCHIVE_NAME-$ARCHIVE_PLATFORM.xcarchive" \
     SKIP_INSTALL=NO \
     BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+    SUPPORTS_MACCATALYST=YES \
+    TARGETED_DEVICE_FAMILY="1,2" \
     DEBUG_INFORMATION_FORMAT=DWARF
 done
 
 xcodebuild -create-xcframework \
   -framework "$ROOT/$ARCHIVE_NAME-iOS.xcarchive/$FRAMEWORK_PATH" \
   -framework "$ROOT/$ARCHIVE_NAME-iOS Simulator.xcarchive/$FRAMEWORK_PATH" \
+  -framework "$ROOT/$ARCHIVE_NAME-macOS,variant=Mac Catalyst.xcarchive/$FRAMEWORK_PATH" \
   -output "$ROOT/$FRAMEWORK_NAME.xcframework"
 
 cd "$ROOT"
